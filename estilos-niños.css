@@ -1,0 +1,148 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 4px 8px 0 rgba(151, 151, 151, 0.219);
+    margin-bottom: 5%;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+
+}
+
+.menu h1{
+    width: 25%;
+    text-align: center;
+    margin: auto;
+}
+.menu-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-right: 2%;
+    width: 75%;
+}
+
+.menu-item >p{
+    padding: 2%;
+    margin-right: 3%;
+
+}
+
+.menu-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.content{
+    width: 90%;
+    display: flex;
+    margin: auto;
+    
+}
+
+.filtro{
+    width: 15%;
+    margin-top: 8%;
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgba(211, 211, 211, 0.493); 
+}
+
+.filtro >p {
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.filtro >li {
+    padding: 5% 10%;
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+.filtro a{
+    text-decoration: none;
+    color: black;
+}
+
+div .catalogo{
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    margin: 9% 0;
+    justify-content: center;
+    
+}
+
+.catalogo img{
+    width: 100%;
+    margin-bottom: 6%;
+    
+}
+
+.producto{
+    justify-content: center;
+    text-align: center;
+    width: 22%;
+    margin-left: 3%;
+    margin-bottom: 6%;
+    border: 2px solid rgba(211, 211, 211, 0.493);
+}
+
+.descripcion >p{
+    margin-top: 4%;
+}
+.descripcion{
+    margin-bottom: 20px;
+}
+.Btn-comprar{
+    text-decoration: none;
+    color: black;
+    background-color: rgb(242, 54, 54);
+    padding: 10px 30px;
+    border-radius: 8px;
+}
+
+footer{
+    background-color: hsla(0, 0%, 8%, 0.988);
+    color: white;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+footer >div{
+    width: 26%;
+    margin: 3% 1%;
+}
+
+
+
+footer >div> p{
+    margin-right: 14%;
+}
+hr{
+    width: 85%;
+}
+iframe{
+    width: 90%;
+    height: 300px;
+    margin: 2%;
+}
+.redes i{
+    width: 100px;
+    display: inline;
+    margin: 1%;
+}
+
+.redes a{
+    text-decoration: none;
+}
