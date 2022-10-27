@@ -49,6 +49,64 @@ a {
     margin-right: 3%;
 
 }
+
+
+.menu-item p:hover{
+    background-color: #E7E7E7;
+}
+
+.item-catalogo{
+    padding: 2%;
+    margin-right: 3%;
+}
+
+.item-catalogo:hover{
+    background-color: #E7E7E7;
+}
+.hr{
+    width: 98%;
+    text-align: center;
+}
+.item-catalogo ul{
+    background-color: white;
+    list-style-type: none;
+    position: absolute;
+    margin-top: 1.5%;
+    width: 12%;
+    margin-left: -1.5%;
+    opacity: 0;
+    border: 1px solid rgba(211, 211, 211, 0.493);
+    padding: 1%;
+    box-shadow: 0 4px 15px 5px  rgba(151, 151, 151, 0.219);
+}
+.item-catalogo li{
+    width: 100%;
+    display: none;
+    margin-top: 2%;
+    padding-bottom: 2%;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.493);
+    
+}
+a{
+    background-color: none;
+    text-decoration: none;
+    color: black;
+    
+}
+
+a:hover{
+    color: #787878;
+    width: 100%;
+}
+.fijar .item-catalogo:hover>ul{
+    opacity: 1;
+    transition: 0.5s;
+}
+.fijar .item-catalogo:hover>ul li{
+    display: block;
+}
+
+/******** CATALOGO **********/
 .content{
     width: 90%;
     display: flex;
