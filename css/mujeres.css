@@ -120,12 +120,12 @@ a:hover{
     list-style-position: inside;
 }
 
-div .catalogo{
+.catalogo{
     display: flex;
     flex-wrap: wrap;
     width: 85%;
     margin: 2% 0;
-    justify-content: center;
+    justify-content: space-around;
     
 }
 
@@ -150,13 +150,7 @@ div .catalogo{
 .descripcion{
     margin-bottom: 20px;
 }
-.Btn-comprar{
-    text-decoration: none;
-    color: black;
-    background-color: rgb(242, 54, 54);
-    padding: 10px 30px;
-    border-radius: 8px;
-}
+
 
 /******** FOOTER **********/
 
