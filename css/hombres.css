@@ -6,35 +6,20 @@
     scroll-behavior: smooth;
 }
 
-a {
-    color: #000000;
-}
-
-.menu {
+.menu{
     display: flex;
     flex-direction: row;
     box-shadow: 0 4px 8px 0 rgba(151, 151, 151, 0.219);
     margin-bottom: 5%;
-
-}
-
-.inicio a, li a {
-    text-decoration: none;
-
-}
-.inicio a:active {
-    color: #000000;
-}
-.inicio:hover {
-    background-color: grey;
-}
-.costo:hover{
-    background-color: pink;
+    width: 100%;
+    background-color: white;
+    position: fixed;
 }
 .menu h1{
     width: 25%;
     text-align: center;
     margin: auto;
+    
 }
 .menu-item{
     display: flex;
@@ -43,24 +28,12 @@ a {
     margin-right: 2%;
     width: 75%;
 }
-
-.menu-item >p{
+.menu-item > p {
     padding: 2%;
     margin-right: 3%;
 
 }
-
-
 .menu-item p:hover{
-    background-color: #E7E7E7;
-}
-
-.item-catalogo{
-    padding: 2%;
-    margin-right: 3%;
-}
-
-.item-catalogo:hover{
     background-color: #E7E7E7;
 }
 .hr{
@@ -105,8 +78,46 @@ a:hover{
 .fijar .item-catalogo:hover>ul li{
     display: block;
 }
-
 /******** CATALOGO **********/
+.item-catalogo{
+    padding: 2%;
+    margin-right: 3%;
+}
+
+.item-catalogo:hover{
+    background-color: #E7E7E7;
+}
+
+.inicio a, li a {
+    text-decoration: none;
+
+}
+.inicio a:active {
+    color: #000000;
+}
+
+.costo:hover{
+    background-color: pink;
+}
+
+.menu h1{
+    width: 25%;
+    text-align: center;
+    margin: auto;
+}
+.menu-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-right: 2%;
+    width: 75%;
+}
+
+.menu-item >p{
+    padding: 2%;
+    margin-right: 3%;
+
+}
 .content{
     width: 90%;
     display: flex;
@@ -174,32 +185,63 @@ div .catalogo{
     border-radius: 8px;
 }
 
+/******** FOOTER **********/
+
 footer{
     background-color: hsla(0, 0%, 8%, 0.988);
     color: white;
     display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
-    justify-content: center;
 }
-footer >div{
+
+.info >div{
     width: 26%;
     margin: 3% 1%;
 }
 
+.info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
-
-footer >div> p{
+.info div{
+    margin-bottom: 0px;
+}
+.info >div> p{
     margin-right: 14%;
+    color: rgb(132, 132, 132);
 }
 hr{
     width: 85%;
+    border: 0;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+    
 }
 iframe{
-    width: 90%;
+    width: 85%;
     height: 300px;
     margin: 2%;
 }
+
 .redes i{
     width: 100px;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 10%;
+    color: rgb(132, 132, 132);
+}
+
+.derechos{
+    width: 83%;
+    margin: auto;
+    
+    text-align: center;
+    padding: 2% 0;
+    color: rgb(132, 132, 132);
+}
+.derechos hr{
+    width: 100%;
 }
