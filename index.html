@@ -19,8 +19,9 @@
 </head>
 <body id="todito">    
     <div class="fijar">
-        <div id="claro_oscuro" class="menu">
-        <h1><p onclick="changeColor('black', 'white', '#454545')" style="user-select: none;" id="claro_oscuro">MiTienda</p></h1>
+
+    <div id="claro_oscuro" class="menu">
+        <h1><p onclick="changeColor('#141414fc', 'white', '#454545')" style="user-select: none;" id="claro_oscuro">MiTienda</p></h1>
             <div class="menu-item">
                 <p><a href="index.html"><b id="claro_oscuro1">Inicio</b></a></p>
                 <p><a href="nosotros.html"><b id="claro_oscuro2">Nosotros</b></a></p>
@@ -34,13 +35,13 @@
                 <p><a href="#contactanos"><b id="claro_oscuro3">Contactanos</b></a></p>
                 <p><a href="Login.html"><b id="claro_oscuro4">Login</b></a></p>
             </div>
-        </div>
+    </div>
     </div>
 
     <div class="baner">
         <a href="mujeres.html"><img src="img/inicio-baner.jpg" alt=""></a>        
-    </div>    
-
+    </div>   
+    
     <div class="contenido">   
         <div class="area">
             <div id="claro_oscuro5" class="area1">
@@ -107,7 +108,8 @@
         </div>
     </footer>
 
-<<<<<<< HEAD
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/jquery.js"></script>
     <script>
         function changeColor(fondo, letra, body){
             //Body
@@ -148,25 +150,20 @@
             var obj6 = document.getElementById('claro_oscuro5');
             obj6.style.background = fondo;
             obj6.style.color = letra;
-            var obj9 = document.getElementById('claro_oscuro8');
-            obj9.style.background = letra;
-            obj9.style.color = fondo;
+            // var obj9 = document.getElementById('claro_oscuro8');
+            // obj9.style.background = letra;
+            // obj9.style.color = fondo;
 
             //Footer            
-            var obj7 = document.getElementById('claro_oscuro6');
+           /*  var obj7 = document.getElementById('claro_oscuro6');
             obj7.style.background = letra;
             obj7.style.color = fondo ;
             var obj8 = document.getElementById('claro_oscuro7');
             obj8.style.background = letra;
-            obj8.style.color = fondo;
+            obj8.style.color = fondo; */
         }
     </script>
-=======
-
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="bootstrap/js/jquery.js"></script>
-
->>>>>>> 0740b46a7c8904636f5d25e7e995c11eed44e6e0
+    
 </body>
 </html>
 
