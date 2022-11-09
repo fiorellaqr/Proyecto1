@@ -16,38 +16,33 @@
     <script src="https://kit.fontawesome.com/638ca44e0a.js" crossorigin="anonymous"></script>
     <title>MiTienda</title>
 </head>
-<body>    
+<body id="todito">    
     <div class="fijar">
-        <div class="menu">
-        <h1><a href="index.html">MiTienda</a></h1>
-        <div class="menu-item">
-            <p><a href="index.html"><b>Inicio</b></a></p>
-            <p><a href="nosotros.html"><b>Nosotros</b></a></p>
-            <div class="catalogo"><b>Catalogo</b>
-                <ul>
-                    <li><a href="hombres.html">Varones</a></li>
-                    <li><a href="mujeres.html">Damas</a></li>
-                    <li><a href="Niños.html">Infantes</a></li>
-                </ul>
+        <div id="claro_oscuro" class="menu">
+        <h1><p onclick="changeColor('black', 'white', '#454545')" style="user-select: none;" id="claro_oscuro">MiTienda</p></h1>
+            <div class="menu-item">
+                <p><a href="index.html"><b id="claro_oscuro1">Inicio</b></a></p>
+                <p><a href="nosotros.html"><b id="claro_oscuro2">Nosotros</b></a></p>
+                <div class="catalogo"><b id="cata">Catalogo</b>
+                    <ul id="claro_oscuro9">
+                        <li><a id="letra1" href="hombres.html">Varones</a></li>
+                        <li><a id="letra2" href="mujeres.html">Damas</a></li>
+                        <li><a id="letra3" href="Niños.html">Infantes</a></li>
+                    </ul>
+                </div>
+                <p><a href="#contactanos"><b id="claro_oscuro3">Contactanos</b></a></p>
+                <p><a href="Login.html"><b id="claro_oscuro4">Login</b></a></p>
             </div>
-            <p><a href="#contactanos"><b>Contactanos</b></a></p>
-            <p><a href="Login.html"><b>Login</b></a></p>
-        </div>
         </div>
     </div>
 
     <div class="baner">
-        <a href="mujeres.html"><img src="img/inicio-baner.jpg" alt=""></a>
-        
-    </div>
-    
+        <a href="mujeres.html"><img src="img/inicio-baner.jpg" alt=""></a>        
+    </div>    
 
-    <div class="contenido">
-        
-
-
+    <div class="contenido">   
         <div class="area">
-            <div class="area1">
+            <div id="claro_oscuro5" class="area1">
                 <div class="area1-1">
                     <div class="area1-1-1" >
                         <div class="txt1" > <b>Vistete a tu manera</b> </div> <br><br><br>
@@ -56,14 +51,13 @@
                     <div class="area1-1-2">
                         <div class="txt3">A tu talla, <br>a tu estilo  <br> y a tu imagen </div> 
                     </div>
-
                 </div>
             </div>   
             <img class="img-grupo-modelo" src="img/Grupo modelo.jpeg" alt="">     
         </div>
 
         <div class="text4">
-            <h1>Selecciona tu categoría</h1>
+            <h1 id="claro_oscuro8">Selecciona tu categoría</h1>
         </div>
 
         <div class="personas">
@@ -89,7 +83,7 @@
 
 
     <footer id="contactanos">
-        <div class="info">
+        <div class="info" id="claro_oscuro6">
             <div>
                 <h2>Contactanos</h2><br><hr><br><br>
                 <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
@@ -107,11 +101,64 @@
             </div>
         </div>
         
-        <div class="derechos"><hr>
+        <div class="derechos" id="claro_oscuro7"><hr>
             <br><p>© 2022 Goggles. All Rights Reserved | Design by W3layouts</p>
         </div>
     </footer>
 
+    <script>
+        function changeColor(fondo, letra, body){
+            //Body
+            var cuerpo = document.getElementById('todito');
+            cuerpo.style.background = body;
+
+            //Menu
+            var obj1 = document.getElementById('claro_oscuro');
+            obj1.style.background = fondo;
+            obj1.style.color = letra;
+            var obj2 = document.getElementById('claro_oscuro1');
+            obj2.style.background = fondo;
+            obj2.style.color = letra;
+            var obj3 = document.getElementById('claro_oscuro2');
+            obj3.style.background = fondo;
+            obj3.style.color = letra;
+            var obj4 = document.getElementById('claro_oscuro3');
+            obj4.style.background = fondo;
+            obj4.style.color = letra;
+            var obj5 = document.getElementById('claro_oscuro4');
+            obj5.style.background = fondo;
+            obj5.style.color = letra;
+            var obj10 = document.getElementById('claro_oscuro9');
+            obj10.style.background = fondo;
+            obj10.style.color = letra;
+            var letras = document.getElementById('letra1');
+            letras.style.color = letra;
+            var letras = document.getElementById('letra2');
+            letras.style.color = letra;
+            var letras = document.getElementById('letra3');
+            letras.style.color = letra;
+            var obj10 = document.getElementById('cata');
+            obj10.style.background = fondo;
+            obj10.style.color = letra;
+            
+
+            //Cuerpo
+            var obj6 = document.getElementById('claro_oscuro5');
+            obj6.style.background = fondo;
+            obj6.style.color = letra;
+            var obj9 = document.getElementById('claro_oscuro8');
+            obj9.style.background = letra;
+            obj9.style.color = fondo;
+
+            //Footer            
+            var obj7 = document.getElementById('claro_oscuro6');
+            obj7.style.background = letra;
+            obj7.style.color = fondo ;
+            var obj8 = document.getElementById('claro_oscuro7');
+            obj8.style.background = letra;
+            obj8.style.color = fondo;
+        }
+    </script>
 </body>
 </html>
 
