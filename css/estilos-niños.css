@@ -36,6 +36,16 @@
 .menu-item p:hover{
     background-color: #E7E7E7;
 }
+
+.item-catalogo{
+    padding: 2% 2% 0 2%;
+    margin-right: 3%;
+}
+
+.item-catalogo:hover{
+    background-color: #E7E7E7;
+}
+
 .hr{
     width: 98%;
     text-align: center;
@@ -44,7 +54,7 @@
     background-color: white;
     list-style-type: none;
     position: absolute;
-    margin-top: 1.5%;
+    /* margin-top: 1.5%; */
     width: 12%;
     margin-left: -1.5%;
     opacity: 0;
@@ -79,43 +89,73 @@ a:hover{
     display: block;
 }
 
-.item-catalogo{
-    padding: 2%;
-    margin-right: 3%;
-}
 
-.item-catalogo:hover{
-    background-color: #E7E7E7;
-}
-
-.inicio a, li a {
-    text-decoration: none;
-
-}
-.inicio a:active {
-    color: #000000;
-}
-
-
-
-.menu h1{
-    width: 25%;
-    text-align: center;
-    margin: auto;
-}
-.menu-item{
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    margin-right: 2%;
-    width: 75%;
-}
-
-.menu-item >p{
-    padding: 2%;
-    margin-right: 3%;
-
-}
+.menu label {
+    display: none;
+    font-size: 30px;
+    padding: 10px;
+  }
+  
+  #btn-menu {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .menu label {
+      display: block;
+    }
+  
+    .menu-item {
+      position: absolute;
+      background: white;
+      width: 40%;
+      margin-left: -70%;
+      flex-direction: column;
+      box-shadow: 8px 10px 15px 4px rgba(151, 151, 151, 0.219);
+    }
+    #btn-menu:checked ~ .menu-item {
+      margin-top: 65px;
+      margin-left: 0;
+    }
+  
+    .menu h1 {
+      width: 100%;
+    }
+  
+    .menu-item p,
+    .item-catalogo {
+      padding: 5% 5% 5% 10%;
+      margin-right: 0%;
+      margin-bottom: 0;
+      width: 100%;
+    }
+  
+    .item-catalogo{
+      margin: 0;
+      padding: 0;
+  
+    }
+  
+    .item-catalogo>ul{
+      position: relative;
+      margin-right: 0%;
+      width: 100%;
+      margin: 0;
+      box-shadow: none;
+      border: 0;
+      background-color: #f1f1f1;
+    }
+    .item-catalogo ul li{
+      margin: 0%;
+      padding-left: 10%;
+    }
+  
+    .content{
+        padding-top: 9%;
+    }
+  
+  }
+  
 .content{
     width: 90%;
     display: flex;
