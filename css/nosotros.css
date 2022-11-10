@@ -114,7 +114,7 @@ a:hover {
     box-shadow: 8px 10px 15px 4px rgba(151, 151, 151, 0.219);
   }
   #btn-menu:checked ~ .menu-item {
-    margin-top: 60px;
+    margin-top: 65px;
     margin-left: 0;
   }
 
