@@ -7,17 +7,19 @@
   <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-  <form action="#" method="post">
+  <form id="formulario" action="mujeres.html">
     <fieldset>
       <legend><h2>LOGIN</h2></legend>
       <div class="input-group">
-       <span><i class="fa fa-envelope-o"></i></span>
+       <span class="" id="spanEmail"><i class="fa fa-envelope-o"></i></span>
        <input  id="email" placeholder="Email" autocomplete="off" type="email" tabindex="1" autofocus required />
       </div>
+      <p id="msgEmail" class="msg"></p>
      <div class="input-group">
-       <span><i class="fa fa-key"></i></span>
-        <input placeholder="Password" type="password">
+       <span class="" id="spanContra"><i class="fa fa-key"></i></span>
+        <input id="contrasenia" placeholder="Password" type="password" required>
       </div>
+      <p id="msgContra" class="msg"></p>
      <input type="submit" value="Enviar">
     </fieldset>
     <button style="margin-left: 28px; margin-bottom: 18px;" name="botonxd"  id="botonxd"><a style="text-decoration: none; color: white; font-size: 16px;" href="index.html">Regresar</a></button>
@@ -27,5 +29,6 @@
 
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="bootstrap/js/jquery.js"></script>
+  <script src="javascript/login.js"></script>
 
 </html>

@@ -1,33 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>REGISTRO</title>
   <link rel="icon" href="img/Logo.png">
   <link rel="stylesheet" href="css/registro.css">
 </head>
+
 <body>
-  <form action="#" method="post">
+  <form id="formulario" action="#" method="post">
     <fieldset>
-      <legend><h2>REGISTRATE</h2></legend>
+      <legend>
+        <h2>REGISTRATE</h2>
+      </legend>
+      <div class="input-group ">
+        <span class="" id="spanNom"><i class="fa fa-envelope-o "></i></span>
+        <input class="" placeholder="Nombre" type="text" id="nombre">
+      </div>
+      <p class="msg" id="msg_nombre"></p>
+
       <div class="input-group">
-       <span><i class="fa fa-envelope-o"></i></span>
-       <input style="margin-bottom: 12px;" placeholder="Nombre" type="text">
-       <input style="margin-bottom: 12px;" placeholder="Apellidos" type="text">
-       <input style="margin-bottom: 12px;"  id="email" placeholder="Email" autocomplete="off" type="email" tabindex="1" autofocus required />
-       <input style="margin-bottom: 0px;" placeholder="Telefono" type="text" name="telefono" id="email">
+        <span class="" id="spanApe"><i class="fa fa-envelope-o"></i></span>
+        <input  placeholder="Apellidos" type="text" id="apellidos">
       </div>
-     <div class="input-group">
-       <span><i class="fa fa-key"></i></span>
-        <input placeholder="Contraseña" type="text">
-        <input style="margin-top: 10px;" placeholder="Repetir Contraseña" type="text">
+      <p class="msg" id="msg_apellidos"></p>
+
+      <div class="input-group">
+        <span class="" id="spanEmail"><i class="fa fa-envelope-o"></i></span>
+        <input  id="email" placeholder="Email" autocomplete="off" type="email" tabindex="1"
+          autofocus required />
       </div>
-     <input type="submit" value="Siguiente">
+      <p class="msg" id="msg_email"></p>
+
+      <div class="input-group">
+        <span class="" id="spanTlf"><i class="fa fa-envelope-o"></i></span>
+        <input  placeholder="Telefono" type="text" name="telefono" id="telefono">
+      </div>
+      <p class="msg" id="msg_telefono"></p>
+
+      <div class="input-group">
+        <span class="" id="spanContra"><i class="fa fa-key"></i></span>
+        <input placeholder="Contraseña" type="password" id="contrasenia">
+      </div>
+      <p class="msg" id="msg_contrasenia"></p>
+
+      <div class="input-group">
+        <span class="" id="spanContra2"><i class="fa fa-envelope-o"></i></span>
+        <input  placeholder="Repetir Contraseña" type="password" id="contrasenia2">
+      </div>
+      <p class="msg" id="msg_contrasenia2"></p>
+      <input type="submit" value="Siguiente">
     </fieldset>
-    <button style="margin-left: 28px; margin-bottom: 10px;" name="botonxd"  id="botonxd"><a style="text-decoration: none; color: white; font-size: 16px;" href="Login.html">Volver</a></button>
+    <button style="margin-left: 28px; margin-bottom: 10px;" name="botonxd" id="botonxd"><a
+        style="text-decoration: none; color: white; font-size: 16px;" href="Login.html">Volver</a></button>
   </form>
 
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="bootstrap/js/jquery.js"></script>
-</body> 
+  <script src="javascript/funciones.js"></script>
+</body>
+
 </html>

@@ -64,6 +64,7 @@ input[type="submit"]
   cursor:pointer;
   border-radius:5px ;
   font-size:15px;
+  margin-top: 15px;
   margin-left: 3px;
   -webkit-border-radius:5px ;
   -moz-border-radius:5px ;
@@ -73,7 +74,7 @@ input[type="submit"]
 
 input[type="submit"]:hover
 {
-  background:#27ae60
+  background:#27ae60;
 }
 
 fieldset
@@ -100,4 +101,16 @@ fieldset
 
 #botonxd:hover{
     background: #27ae60;
+}
+
+.msg{
+  font-size: 12px;
+  margin-bottom: 0;
+}
+.correcto{
+  background: mediumseagreen;
+
+}
+.incorrecto{
+  background: crimson;
 }
