@@ -21,7 +21,7 @@
     <div class="fijar">
 
     <div id="claro_oscuro" class="menu">
-        <h1><p onclick="changeColor('#141414fc', 'white', '#454545')" style="user-select: none;" id="claro_oscuro">MiTienda</p></h1>
+        <h1><p onclick="changeColor(cFondo,cLetra,cBody)" style="user-select: none;" id="claro_oscuro">MiTienda</p></h1>
             <div class="menu-item">
                 <p><a href="index.html"><b id="claro_oscuro1">Inicio</b></a></p>
                 <p><a href="nosotros.html"><b id="claro_oscuro2">Nosotros</b></a></p>
@@ -111,6 +111,16 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/jquery.js"></script>
     <script>
+
+        let colorCondicion = $('#claro_oscuro').css('backgroundColor');
+        
+        if (colorCondicion = "rgb(255, 255, 255)") {
+            cFondo = '#141414fc';
+            cLetra = 'white';
+            cBody = '#454545';
+            //console.log(colorCondicion);
+        }
+
         function changeColor(fondo, letra, body){
             //Body
             var cuerpo = document.getElementById('todito');
@@ -143,24 +153,28 @@
             letras.style.color = letra;
             var obj10 = document.getElementById('cata');
             obj10.style.background = fondo;
-            obj10.style.color = letra;
-            
+            obj10.style.color = letra;            
 
             //Cuerpo
             var obj6 = document.getElementById('claro_oscuro5');
             obj6.style.background = fondo;
-            obj6.style.color = letra;
-            // var obj9 = document.getElementById('claro_oscuro8');
-            // obj9.style.background = letra;
-            // obj9.style.color = fondo;
-
-            //Footer            
-           /*  var obj7 = document.getElementById('claro_oscuro6');
-            obj7.style.background = letra;
-            obj7.style.color = fondo ;
-            var obj8 = document.getElementById('claro_oscuro7');
-            obj8.style.background = letra;
-            obj8.style.color = fondo; */
+            obj6.style.color = letra;        
+            
+            let colorCondicion = $('#claro_oscuro').css('backgroundColor');
+            switch(colorCondicion){
+                case 'rgb(255, 255, 255)':
+                    cFondo = '#141414fc';
+                    cLetra = 'white';
+                    cBody = '#454545';
+                    //console.log('primer estado no? '+colorCondicion);
+                break;                
+                case 'rgba(20, 20, 20, 0.99)':
+                    cFondo = 'rgb(255, 255, 255)';
+                    cLetra = 'black';
+                    cBody = '#D5D5D5';
+                    //console.log('siguiente?'+colorCondicion);
+                break;
+            }
         }
     </script>
     

@@ -14,6 +14,7 @@
   width: 100%;
   background-color: white;
   position: fixed;
+  z-index: 10;
 }
 .menu h1 {
   width: 25%;
@@ -269,4 +270,69 @@ iframe {
 }
 .derechos hr {
   width: 100%;
+}
+
+
+/*Animacion para vendido*/
+#vendido1{
+  opacity: 0;
+  margin-top:  -100%;
+  width: 100%;
+  height: 100%;
+}
+#vendido2{
+  opacity: 0;
+  margin-top:  -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+#vendido3{
+  opacity: 0;
+  margin-top:  -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+#vendido4{
+  opacity: 0;
+  margin-top:  -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+#vendido5{
+  opacity: 0;
+  margin-top:  -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+#vendido6{
+  opacity: 0;
+  margin-top:  -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+#vendido7{
+  opacity: 0;
+  margin-top:  -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+#vendido8{
+  opacity: 0;
+  margin-top:  -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+#button{
+  border: 0px solid black;
+}
+#button:hover{
+  margin: -1px;
+  border: 1px solid black;
 }
