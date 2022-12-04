@@ -273,7 +273,7 @@ iframe {
 }
 
 
-/*Animacion para vendido*/
+/*Boton para comprar*/
 #vendido1{
   opacity: 0;
   margin-top:  -100%;
@@ -328,11 +328,4 @@ iframe {
   width: 100%;
   height: 100%;
   z-index: 2;
-}
-#button{
-  border: 0px solid black;
-}
-#button:hover{
-  margin: -1px;
-  border: 1px solid black;
 }

@@ -21,7 +21,7 @@
       src="https://kit.fontawesome.com/638ca44e0a.js"
       crossorigin="anonymous"
     ></script>
-    <title>MiTienda</title>
+    <title>Ropa de Niños</title>
   </head>
   <body>
 
@@ -66,75 +66,83 @@
         <div class="catalogo col-md-10">
 
           
-            <div class="card col-sm-5 col-md-3 producto">
+            <div id="product1" class="card col-sm-5 col-md-3 producto">
               <img src="img/polouno.jpg" class="card-img-top" alt="..." />
+              <img id="vendido1" src="img/Vendido.png" alt="" />
               <div class="card-body">
                 <p class="card-text">Polo Corto Dino Niño</p>
                 <h5 class="card-title"><b>S/15.00</b></h5>
-                <button type="button" class="btn btn-light">Más Información...</button>
+                <button class="btn btn-light" id="button1" onclick="obtenerId('product1','vendido1','button1')">Comprar</button>
               </div>
             </div>
 
-            <div class="card col-sm-5 col-md-3 producto">
+            <div id="product2" class="card col-sm-5 col-md-3 producto">
               <img src="img/pantalon.jpg" class="card-img-top" alt="..." />
+              <img id="vendido2" src="img/Vendido.png" alt="" />
               <div class="card-body">
                 <p class="card-text">Pantalon Verde Niño</p>
                 <h5 class="card-title"><b>S/29.00</b></h5>
-                <button type="button" class="btn btn-light">Más Información...</button>
+                <button class="btn btn-light" id="button2" onclick="obtenerId('product2','vendido2','button2')">Comprar</button>
               </div>
             </div>
 
-            <div class="card col-sm-5 col-md-3 producto">
+            <div id="product3" class="card col-sm-5 col-md-3 producto">
               <img src="img/chompa1.jpg" class="card-img-top" alt="..." />
+              <img id="vendido3" src="img/Vendido.png" alt="" />
               <div class="card-body">
                 <p class="card-text">Chompa Break Gris Niño</p>
                 <h5 class="card-title"><b>S/19.00</b></h5>
-                <button type="button" class="btn btn-light">Más Información...</button>
+                <button class="btn btn-light" id="button3" onclick="obtenerId('product3','vendido3','button3')">Comprar</button>
               </div>
             </div>
 
-            <div class="card col-sm-5 col-md-3 producto">
+            <div id="product4" class="card col-sm-5 col-md-3 producto">
               <img src="img/polo2.jpg" class="card-img-top" alt="..." />
+              <img id="vendido4" src="img/Vendido.png" alt="" />
               <div class="card-body">
                 <p class="card-text">Polo Manga Larga Niño</p>
                 <h5 class="card-title"><b>S/20.00</b></h5>
-                <button type="button" class="btn btn-light">Más Información...</button>
+                <button class="btn btn-light" id="button4" onclick="obtenerId('product4','vendido4','button4')">Comprar</button>
               </div>
             </div>
 
-            <div class="card col-sm-5 col-md-3 producto">
+            <div id="product5" class="card col-sm-5 col-md-3 producto">
               <img src="img/polom1.jpg" class="card-img-top" alt="..." />
+              <img id="vendido5" src="img/Vendido.png" alt="" />
               <div class="card-body">
                 <p class="card-text">Polo Corazon Niña</p>
                 <h5 class="card-title"><b>S/26.00</b></h5>
-                <button type="button" class="btn btn-light">Más Información...</button>
+                <button class="btn btn-light" id="button5" onclick="obtenerId('product5','vendido5','button5')">Comprar</button>
               </div>
             </div>
 
-            <div class="card col-sm-5 col-md-3 producto">
+            <div id="product6" class="card col-sm-5 col-md-3 producto">
               <img src="img/chompa2.jpg" class="card-img-top" alt="..." />
+              <img id="vendido6" src="img/Vendido.png" alt="" />
               <div class="card-body">
                 <p class="card-text">Chompa Style Niña</p>
                 <h5 class="card-title"><b>S/25.00</b></h5>
-                <button type="button" class="btn btn-light">Más Información...</button>
+                <button class="btn btn-light" id="button6" onclick="obtenerId('product6','vendido6','button6')">Comprar</button>
               </div>
             </div>
-            <div class="card col-sm-5 col-md-3 producto">
+            <div id="product7" id="product8" class="card col-sm-5 col-md-3 producto">
               <img src="img/short.jpg" class="card-img-top" alt="..." />
+              <img id="vendido7" src="img/Vendido.png" alt="" />
               <div class="card-body">
                 <p class="card-text">Short Crema Niño</p>
                 <h5 class="card-title"><b>S/19.00</b></h5>
-                <button type="button" class="btn btn-light">Más Información...</button>
+                <button class="btn btn-light" id="button7" onclick="obtenerId('product7','vendido7','button7')">Comprar</button>
               </div>
             </div>
           
 
-          <div class="card col-sm-5 col-md-3 producto">
+          <div id="product8" id="product8" class="card col-sm-5 col-md-3 producto">
             <img src="img/polo3.jpg" class="card-img-top" alt="..." />
+            <img id="vendido8" src="img/Vendido.png" alt="" />
             <div class="card-body">
                 <p class="card-text">Polo Skate Niño</p>
                 <h5 class="card-title"><b>S/.25.00</b></h5>
-                <button type="button" class="btn btn-light">Más Información...</button>
+                <button class="btn btn-light" id="button8" onclick="obtenerId('product8','vendido8','button8')">Comprar</button>
             </div>
           </div>
         </div>
@@ -189,5 +197,38 @@
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/jquery.js"></script>
+    <script>
+
+      //Funcion para agregar estado de "Vendido"
+      function obtenerId(idProd,idImg,idBtn){
+        class objVenta{
+          //Atributos
+          idVend;
+          idObj;
+          btn;
+          
+          //Metodo para cambiar la propiedad de opacidad
+          ocultarObj () {
+            objVen.style.opacity = 0.6;
+            objIm.style.opacity = 1;
+            objBtn.disabled = true;
+            
+          }
+    
+        }
+        
+        const objInfa = new objVenta;
+        objInfa.idVend = idProd;
+        objInfa.idObj = idImg;
+        objInfa.btn = idBtn;
+    
+        let objVen = document.getElementById(objInfa.idVend);
+        let objIm = document.getElementById(objInfa.idObj);
+        let objBtn = document.getElementById(objInfa.btn);
+    
+        objInfa.ocultarObj();
+      }
+    
+    </script>
   </body>
 </html>

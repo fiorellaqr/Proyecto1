@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="icon" href="img/Logo.png" />
     <link rel="stylesheet" href="css/hombres.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +57,7 @@
                   <div class="card-body">
                     <p class="card-text">Camisa Lorenzini</p>
                     <h5 class="card-title"><b>S/.78.90</b></h5>
-                    <button class="btn1" id="button" onclick="obtenerId('product1','vendido1',)">Comprar</button>
+                    <button class="btn btn-light" id="button1" onclick="obtenerId('product1','vendido1','button1')">Comprar</button>
                   </div>
                 </div>
       
@@ -66,7 +67,7 @@
                   <div class="card-body">
                     <p class="card-text">Camisa Nautica</p>
                     <h5 class="card-title"><b>S/.64.90</b></h5>
-                    <button class="btn2" id="button" onclick="obtenerId('product2','vendido2')">Comprar</button>
+                    <button class="btn btn-light" id="button2" onclick="obtenerId('product2','vendido2','button2')">Comprar</button>
                   </div>
                 </div>
       
@@ -76,7 +77,7 @@
                   <div class="card-body">
                     <p class="card-text">Camisa Donatelli</p>
                     <h5 class="card-title"><b>S/.84.90</b></h5>
-                    <button class="btn3" id="button" onclick="obtenerId('product3','vendido3')">Comprar</button>
+                    <button class="btn btn-light" id="button3" onclick="obtenerId('product3','vendido3','button3')">Comprar</button>
                   </div>
                 </div>
     
@@ -86,7 +87,7 @@
                   <div class="card-body">
                     <p class="card-text">Chompa Hypnotic</p>
                     <h5 class="card-title"><b>S/.89.90</b></h5>
-                    <button class="btn4" id="button" onclick="obtenerId('product4','vendido4')">Comprar</button>
+                    <button class="btn btn-light" id="button4" onclick="obtenerId('product4','vendido4','button4')">Comprar</button>
                   </div>
                 </div>
     
@@ -96,7 +97,7 @@
                   <div class="card-body">
                     <p class="card-text">Chompa Malabar</p>
                     <h5 class="card-title"><b>S/.124.90</b></h5>
-                    <button class="btn5" id="button" onclick="obtenerId('product5','vendido5')">Comprar</button>
+                    <button class="btn btn-light" id="button5" onclick="obtenerId('product5','vendido5','button5')">Comprar</button>
                   </div>
                 </div>
     
@@ -106,7 +107,7 @@
                   <div class="card-body">
                     <p class="card-text">Chompa Index</p>
                     <h5 class="card-title"><b>S/.75.00</b></h5>
-                    <button class="btn6" id="button" onclick="obtenerId('product6','vendido6')">Comprar</button>
+                    <button class="btn btn-light" id="button6" onclick="obtenerId('product6','vendido6','button6')">Comprar</button>
                   </div>
                 </div>
 
@@ -116,7 +117,7 @@
                   <div class="card-body">
                     <p class="card-text">Pantalon Drill</p>
                     <h5 class="card-title"><b>S/.69.90</b></h5>
-                    <button class="btn7" id="button" onclick="obtenerId('product7','vendido7')">Comprar</button>
+                    <button class="btn btn-light" id="button7" onclick="obtenerId('product7','vendido7'),'button7'">Comprar</button>
                   </div>
                 </div>
 
@@ -126,7 +127,7 @@
                   <div class="card-body">
                       <p class="card-text">Pantalon DKVK</p>
                       <h5 class="card-title"><b>S/.79.90</b></h5>
-                      <button class="btn8" id="button" onclick="obtenerId('product8','vendido8')">Comprar</button>
+                      <button class="btn btn-light" id="button8" onclick="obtenerId('product8','vendido8','button8')">Comprar</button>
                   </div>
                 </div>
 
@@ -187,7 +188,7 @@
 <script>
 
   //Funcion para agregar estado de "Vendido"
-  function obtenerId(idProd,idImg){
+  function obtenerId(idProd,idImg,idBtn){
     class objVenta{
       //Atributos
       idVend;
@@ -198,6 +199,7 @@
       ocultarObj () {
         objVen.style.opacity = 0.6;
         objIm.style.opacity = 1;
+        objBtn.disabled = true;
         
       }
 
@@ -206,16 +208,15 @@
     const objVaron = new objVenta;
     objVaron.idVend = idProd;
     objVaron.idObj = idImg;
+    objVaron.btn = idBtn;
 
     let objVen = document.getElementById(objVaron.idVend);
     let objIm = document.getElementById(objVaron.idObj);
+    let objBtn = document.getElementById(objVaron.btn);
     
 
     objVaron.ocultarObj();
   }
-
- 
-
 
 </script>
 
