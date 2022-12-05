@@ -1,0 +1,7 @@
+CREDENCIALES:
+
+email: cliente@gmail.com
+contraseña: cliente
+
+email: usuario@gmail.com
+contraseña: usuario

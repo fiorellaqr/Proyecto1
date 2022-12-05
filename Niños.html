@@ -69,32 +69,32 @@
             <img id="vendido1" src="img/Vendido.png" alt="" />
             <div class="texto">
               <div class="card-body">
-                <p class="card-text">Polo Corto Dino Niño</p>
+                <p id="modelo" class="card-text">Polo Corto Dino Niño</p>
                 <div>
                   <!-- precio -->
-                  <h5 class="card-title"><b>S/15.00</b></h5>
+                  <h5 id="precio" class="card-title"><b>S/15.00</b></h5>
                 </div>
               </div>
             </div>
           </div>
   
           <div id="product2" class="card col-sm-5 col-md-3 producto">
-            <img src="img/pantalon.jpg" class="card-img-top" alt="..." />
+            <img id="imagem" src="img/pantalon.jpg" class="card-img-top" alt="..." />
             <img id="vendido2" src="img/Vendido.png" alt="" />
             <div class="card-body">
-              <p class="card-text">Pantalon Verde Niño</p>
-              <h5 class="card-title"><b>S/29.00</b></h5>
+              <p id="modelo" class="card-text">Pantalon Verde Niño</p>
+              <h5 id="precio" class="card-title"><b>S/29.00</b></h5>
               <button class="btn btn-light" id="button2"
                 onclick="obtenerId('product2','vendido2','button2')">Comprar</button>
             </div>
           </div>
   
           <div id="product3" class="card col-sm-5 col-md-3 producto">
-            <img src="img/chompa1.jpg" class="card-img-top" alt="..." />
+            <img id="imagem" src="img/chompa1.jpg" class="card-img-top" alt="..." />
             <img id="vendido3" src="img/Vendido.png" alt="" />
             <div class="card-body">
-              <p class="card-text">Chompa Break Gris Niño</p>
-              <h5 class="card-title"><b>S/19.00</b></h5>
+              <p id="modelo" class="card-text">Chompa Break Gris Niño</p>
+              <h5 id="precio" class="card-title"><b>S/19.00</b></h5>
               <button class="btn btn-light" id="button3"
                 onclick="obtenerId('product3','vendido3','button3')">Comprar</button>
             </div>
@@ -158,6 +158,32 @@
 
         
       </div>
+
+      <!-- producto flotante -->
+  <div class="productos-preview">
+
+    <div class="preview" data-target="p-1">
+      <i class="fas fa-times"></i>
+      <img id="imgCard" src="" alt="">
+      <h3 id="modeloCard"></h3>
+      <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <span>( 250 )</span>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora culpa aut sint, autem magnam cupiditate
+      </p>
+      <span id="precioCard" class="precio">20.00</span>
+      <div class="botons">
+        <a href="#" class="comprarr">Comprar</a>
+        <a href="#" class="carrrito">Añadir a carrito</a>
+      </div>
+    </div>
+
+  </div>
     </div>
   </div>
 
@@ -201,32 +227,7 @@
       <p>© 2022 Goggles. All Rights Reserved | Design by W3layouts</p>
     </div>
   </footer>
-  <!-- producto flotante -->
-  <div class="productos-preview">
-
-    <div class="preview" data-target="p-1">
-      <i class="fas fa-times"></i>
-      <img src="img/polouno.jpg" alt="">
-      <h3>Polo Corto Dino Niño</h3>
-      <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star-half-alt"></i>
-        <span>( 250 )</span>
-      </div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora culpa aut sint, autem magnam cupiditate
-        impedit repellat itaque suscipit modi sunt, officia distinctio, quibusdam est? Molestias sapiente aliquid ex in!
-      </p>
-      <div class="precio">s/15.00</div>
-      <div class="botons">
-        <a href="#" class="comprarr">Comprar</a>
-        <a href="#" class="carrrito">Añadir a carrito</a>
-      </div>
-    </div>
-
-  </div>
+  
 
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="bootstrap/js/jquery.js"></script>
@@ -265,14 +266,28 @@
     let preveiwContainer = document.querySelector('.productos-preview');
     let previewBox = preveiwContainer.querySelectorAll('.preview');
 
+    let imgCard = document.getElementById("imgCard");
+    let modeloCard = document.getElementById("modeloCard");
+    let precioCard = document.getElementById("precioCard");
+
     document.querySelectorAll('.card').forEach(card =>{
       card.onclick = () =>{
         preveiwContainer.style.display = 'flex';
         let name = card.getAttribute('data-name');
+
         previewBox.forEach(preview =>{
+
+          let imgSeleccionada = card.getElementsByTagName("img")[0].src;
+          let modeloSeleccionada = card.getElementsByTagName("p")[0].innerHTML;
+          let precioSeleccionada = card.getElementsByTagName("b")[0].innerHTML;
+          
+          imgCard.src=imgSeleccionada;
+          modeloCard.innerHTML=modeloSeleccionada;
+          precioCard.innerHTML=precioSeleccionada;
+
           let target = preview.getAttribute('data-target');
           if(name == target){
-            preview.classlist.add('active');
+            preview.classlist.add("active");
           }
         });
       };
@@ -280,7 +295,7 @@
 
     previewBox.forEach(close =>{
       close.querySelector('.fa-times').onclick = () =>{
-        close.classList.remove('active');
+        close.classList.remove("active");
         preveiwContainer.style.display = 'none';
       }
     });
