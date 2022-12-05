@@ -30,11 +30,15 @@ $formulario.onsubmit = evento => {
         $msg_contrasenia.style.color = "red";
         $spanContra.classList.add("incorrecto") ;
         $spanContra.classList.remove("correcto") ;
+
     } else{
         $msg_contrasenia.innerHTML = "La contraseña es correcta.";
         $msg_contrasenia.style.color = "green";
         $spanContra.classList.add("correcto") ;
         $spanContra.classList.remove("incorrecto") ;
     }
-    $formulario.submit();
+    if (email == "admin@gmail.com" && contrasenia == "admin") {
+        $formulario.submit();
+    }
+    
 }
