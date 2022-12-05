@@ -148,6 +148,32 @@
           </div>
 
         </div>
+
+        <!-- producto flotante -->
+  <div class="productos-preview">
+
+    <div class="preview" data-target="p-1">
+      <i class="fas fa-times"></i>
+      <img id="imgCard" src="" alt="">
+      <h3 id="modeloCard"></h3>
+      <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <span>( 250 )</span>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora culpa aut sint, autem magnam cupiditate
+      </p>
+      <span id="precioCard" class="precio">20.00</span>
+      <div class="botons">
+        <a href="#" class="comprarr">Comprar</a>
+        <a href="#" class="carrrito">Añadir a carrito</a>
+      </div>
+    </div>
+
+  </div>
       </div>
     </div>
 
@@ -231,6 +257,43 @@
         objMujer.ocultarObj();
       }
     
+      //producto flotante
+    let preveiwContainer = document.querySelector('.productos-preview');
+    let previewBox = preveiwContainer.querySelectorAll('.preview');
+
+    let imgCard = document.getElementById("imgCard");
+    let modeloCard = document.getElementById("modeloCard");
+    let precioCard = document.getElementById("precioCard");
+
+    document.querySelectorAll('.card').forEach(card =>{
+      card.onclick = () =>{
+        preveiwContainer.style.display = 'flex';
+        let name = card.getAttribute('data-name');
+
+        previewBox.forEach(preview =>{
+
+          let imgSeleccionada = card.getElementsByTagName("img")[0].src;
+          let modeloSeleccionada = card.getElementsByTagName("p")[0].innerHTML;
+          let precioSeleccionada = card.getElementsByTagName("b")[0].innerHTML;
+          
+          imgCard.src=imgSeleccionada;
+          modeloCard.innerHTML=modeloSeleccionada;
+          precioCard.innerHTML=precioSeleccionada;
+
+          let target = preview.getAttribute('data-target');
+          if(name == target){
+            preview.classlist.add("active");
+          }
+        });
+      };
+    });
+
+    previewBox.forEach(close =>{
+      close.querySelector('.fa-times').onclick = () =>{
+        close.classList.remove("active");
+        preveiwContainer.style.display = 'none';
+      }
+    });
     </script>
   </body>
 </html>

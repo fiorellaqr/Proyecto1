@@ -273,6 +273,116 @@ iframe {
 }
 
 
+/* producto flotante */
+
+.productos-preview{
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  background: rgb(0,0,0,.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.productos-preview .preview{
+  padding: 1rem;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  margin-top: 3rem;
+  width: 28rem;
+  /* margin-top: 0rem;
+  margin-bottom: 2rem; */
+}
+
+.productos-preview .preview .active{
+  display: inline-block;
+}
+
+.productos-preview .preview img{
+  height: 20rem;
+}
+
+.productos-preview .preview .fa-times{
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+  color: #444;
+  font-size: 2rem;
+}
+
+/* .productos-preview .preview .fa-times:hover{
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+} */
+
+.productos-preview .preview h3{
+  color: #444;
+  padding: .5rem 0;
+  font-size: 1.8rem;
+}
+
+.productos-preview .preview .stars{
+  font-size: 1rem;
+}
+
+.productos-preview .preview .stars i{
+  color: rgba(57, 53, 53, 0.493);
+}
+
+.productos-preview .preview .stars span{
+  color: rgba(57, 53, 53, 0.493);
+}
+
+.productos-preview .preview p{
+  padding: 1rem 0;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 0;
+}
+
+.productos-preview .preview .precio{
+  font-size: 2rem;
+  color: rgba(57, 53, 53);
+}
+
+.productos-preview .preview .botons{
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.productos-preview .preview .botons a{
+  flex: 1 1 16rem;
+  padding: 0.5rem;
+  color: black;
+  border: .1rem solid black;
+}
+
+.productos-preview .preview .botons a.carrrito{
+  background: black;
+  color: #fff;
+}
+
+.productos-preview .preview .botons a.carrrito:hover{
+  background: #787878;
+}
+
+.productos-preview .preview .botons a.comprarr:hover{
+  background: #787878;
+  color: #fff;
+}
+
+
 /*Boton para comprar*/
 #vendido1{
   opacity: 0;
