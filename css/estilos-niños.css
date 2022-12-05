@@ -6,6 +6,168 @@
     scroll-behavior: smooth;
 }
 
+.texto{
+    padding-bottom: 13%;
+}
+
+/* marco hover del producto */
+
+#producto{
+    cursor: pointer;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+#producto:hover{
+    outline: .2rem solid rgba(148, 139, 139, 0.493);
+    outline-offset: -1.1rem;
+}
+
+#producto:hover #imagem{
+    transform: scale(.9);
+    -webkit-transform: scale(.9);
+    -moz-transform: scale(.9);
+    -ms-transform: scale(.9);
+    -o-transform: scale(.9);
+    transition: 0.9s;
+    -webkit-transition: 0.9s;
+    -moz-transition: 0.9s;
+    -ms-transition: 0.9s;
+    -o-transition: 0.9s;
+}
+
+/* producto flotante */
+
+.productos-preview{
+    position: fixed;
+    top: 4.8rem;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(0,0,0,.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.productos-preview .preview{
+    padding: 2rem;
+    text-align: center;
+    background: #fff;
+    position: relative;
+    margin: 2rem;
+    width: 40rem;
+    margin-bottom: 9.5rem;
+}
+
+.productos-preview .preview.active{
+    display: inline-block;
+}
+
+.productos-preview .preview img{
+    height: 25rem;
+}
+
+.productos-preview .preview .fa-times{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    cursor: pointer;
+    color: #444;font-size: 4rem;
+}
+
+.productos-preview .preview .fa-times:hover{
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
+.productos-preview .preview h3{
+    color: #444;
+    padding: .5rem 0;
+    font-size: 2.5rem;
+}
+
+.productos-preview .preview .stars{
+    padding: 1rem 0;
+    font-size: 1.4rem;
+}
+
+.productos-preview .preview .stars i{
+    color: rgba(57, 53, 53, 0.493);
+}
+
+.productos-preview .preview .stars span{
+    color: rgba(57, 53, 53, 0.493);
+}
+
+.productos-preview .preview p{
+    line-height: 1.5;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    color: #777;
+}
+
+.productos-preview .preview .precio{
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: rgba(57, 53, 53, 0.493);
+}
+
+.productos-preview .preview .botons{
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    ,margin-top: 1rem;
+}
+
+.productos-preview .preview .botons a{
+    flex: 1 1 16rem;
+    padding: 1rem;
+    font-size: 1.3rem;
+    color: black;
+    border: .1rem solid black;
+}
+
+.productos-preview .preview .botons a.carrrito{
+    background: black;
+    color: #fff;
+}
+
+.productos-preview .preview .botons a.carrrito:hover{
+    background: #787878;
+}
+
+.productos-preview .preview .botons a.comprarr:hover{
+    background: #787878;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .menu{
     display: flex;
     flex-direction: row;
