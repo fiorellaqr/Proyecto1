@@ -167,6 +167,7 @@
               <div class="imgCard"><img id="imgCard" src="" alt=""></div>
               <div class="detalles">
                 <h3 id="modeloCard"></h3>
+                <h1 id="idCard" style="display: none;"></h1>
                 <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -184,13 +185,19 @@
                   <option value="2">M</option>
                   <option value="3">L</option>
                 </select>
+                
+                  <div class="col input input-group-sm col col-4 mb-2">
+                  <input id="cantCard" type="number" min="1" class="form-control " placeholder="cantidad" >
+                  </div>
+              
+                
                 <span id="precioCard" class="precio"></span>
               </div>
 
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
-              <button type="button" class="btn btn-primary">Añadir al carrito</button>
+              <button type="submit" id="btnSubmit" class="btn btn-primary">Añadir al carrito</button>
             </div>
           </div>
         </div>
@@ -294,16 +301,12 @@
     localStorage.setItem("lista_prod", JSON.stringify(productos))
 
 
-
-
     catalogo = document.getElementById("catalogo");
-    console.log(catalogo);
 
     function listarProductos() {
 
       $("#catalogo").html("");
       arrayProductos = JSON.parse(localStorage.getItem("lista_prod"));
-
 
       if (arrayProductos === null) {
         arrayProductos = [];
@@ -328,20 +331,16 @@
     }
 
 
+    function mostrarModal() {
+      let mod = document.querySelector('.modal');
+      let body = document.querySelectorAll('.modal-body');
 
-    let mod = document.querySelector('.modal');
-    let body = document.querySelectorAll('.modal-body');
-
-    let imgCard = document.getElementById("imgCard");
-    let modeloCard = document.getElementById("modeloCard");
-    let precioCard = document.getElementById("precioCard");
-    let tallaCard = document.getElementById("tallaCard");
-
-    document.addEventListener('DOMContentLoaded', () => {
-      listarProductos();
-      //producto flotante
+      let imgCard = document.getElementById("imgCard");
+      let modeloCard = document.getElementById("modeloCard");
+      let precioCard = document.getElementById("precioCard");
+      let idCard = document.getElementById("idCard");
+      let tallaCard = document.getElementById("tallaCard");
       document.querySelectorAll('.card').forEach(card => {
-        console.log(card);
         card.onclick = () => {
           console.log("click");
 
@@ -350,20 +349,58 @@
             let imgSeleccionada = card.getElementsByTagName("img")[0].src;
             let modeloSeleccionada = card.getElementsByTagName("p")[0].innerHTML;
             let precioSeleccionada = card.getElementsByTagName("b")[0].innerHTML;
+            let idSeleccionada = card.getAttribute("data-id");
 
             imgCard.src = imgSeleccionada;
             modeloCard.innerHTML = modeloSeleccionada;
             precioCard.innerHTML = precioSeleccionada;
+            idCard.innerHTML = idSeleccionada;
           });
-
-
         };
       });
+    }
 
+
+    $("#btnSubmit").click(function(event){
+
+      id=document.getElementById("idCard").innerHTML;
+      console.log("click botn");
+    
+      var carritoItem = arrayProductos[id-1];
+      console.log();
+
+      addCarrito(carritoItem.id);
+    })
+    
+    let arrayDato=[];
+    function crearItem (id,talla,cant){
+      let dato={
+        id: id,
+        talla: talla,
+        cantidad: cant
+      }
+      arrayDato.push(dato);
+    }
+
+    function addCarrito(id){
+      
+      let miCarrito = localStorage.getItem("miCarrito");
+      var ptalla = $("#tallaCard option:selected").text();
+      var pcantidad = $("#cantCard").val();
+      
+      //console.log(id,ptalla,pcantidad);
+      crearItem(id,ptalla,pcantidad);   
+      localStorage.setItem("miCarrito", JSON.stringify(arrayDato));
+    }
+
+    
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      listarProductos();
+      //producto flotante
+      mostrarModal();
     });
-
-
-
 
   </script>
 </body>
