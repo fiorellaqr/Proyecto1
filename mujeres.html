@@ -63,10 +63,10 @@
         <li><a href="hombres.html">Hombres</a></li>
         <li><a href="Niños.html">Niños</a></li>
       </div>
-      <div class="catalogo col-md-10">
+      <div class="catalogo col-md-10" id="catalogo">
 
 
-        <div id="product1" class="card col-sm-5 col-md-3 producto">
+        <!-- <div id="product1" class="card col-sm-5 col-md-3 producto">
           <img src="img/mujer1.webp" class="card-img-top" alt="..." />
           <img id="vendido1" src="img/Vendido.png" alt="" />
           <div class="card-body">
@@ -152,36 +152,9 @@
             <button class="btn btn-light" id="button8"
               onclick="obtenerId('product8','vendido8','button8')">Comprar</button>
           </div>
-        </div>
+        </div> -->
 
       </div>
-
-      <!-- producto flotante -->
-      <!-- <div class="productos-preview " >
-
-        <div class="preview" role="dialog" data-target="p-1">
-          <i class="fas fa-times"></i>
-          <img id="imgCard" src="" alt="">
-          <h3 id="modeloCard"></h3>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-            <span>( 250 )</span>
-          </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora culpa aut sint, autem magnam cupiditate
-          </p>
-          <span id="precioCard" class="precio">20.00</span>
-          <div class="botons">
-            <a href="#" class="comprarr">Comprar</a>
-            <a href="#" class="carrrito">Añadir a carrito</a>
-          </div>
-        </div>
-
-      </div> -->
-
 
       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -194,26 +167,26 @@
               <div class="imgCard"><img id="imgCard" src="" alt=""></div>
               <div class="detalles">
                 <h3 id="modeloCard"></h3>
-              <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <span>( 250 )</span>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <span>( 250 )</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora culpa aut sint, autem magnam
+                  cupiditate
+                </p>
+                <select class="form-select form-select-sm" aria-label="Default select example" id="tallaCard">
+                  <option>Seleccionar talla</option>
+                  <option value="1">S</option>
+                  <option value="2">M</option>
+                  <option value="3">L</option>
+                </select>
+                <span id="precioCard" class="precio"></span>
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora culpa aut sint, autem magnam
-                cupiditate
-              </p>
-              <select class="form-select form-select-sm" aria-label="Default select example" id="tallaCard">
-                <option >Seleccionar talla</option>
-                <option value="1">S</option>
-                <option value="2">M</option>
-                <option value="3">L</option>
-              </select>
-              <span id="precioCard" class="precio"></span>
-              </div>
-              
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
@@ -270,38 +243,91 @@
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="bootstrap/js/jquery.js"></script>
   <script>
-
-    //Funcion para agregar estado de "Vendido"
-    function obtenerId(idProd, idImg, idBtn) {
-      class objVenta {
-        //Atributos
-        idVend;
-        idObj;
-        btn;
-
-        //Metodo para cambiar la propiedad de opacidad
-        ocultarObj() {
-          objVen.style.opacity = 0.6;
-          objIm.style.opacity = 1;
-          objBtn.disabled = true;
-
+    /* 
+        //Funcion para agregar estado de "Vendido"
+        function obtenerId(idProd, idImg, idBtn) {
+          class objVenta {
+            //Atributos
+            idVend;
+            idObj;
+            btn;
+    
+            //Metodo para cambiar la propiedad de opacidad
+            ocultarObj() {
+              objVen.style.opacity = 0.6;
+              objIm.style.opacity = 1;
+              objBtn.disabled = true;
+    
+            }
+    
+          }
+    
+          const objMujer = new objVenta;
+          objMujer.idVend = idProd;
+          objMujer.idObj = idImg;
+          objMujer.btn = idBtn;
+    
+          let objVen = document.getElementById(objMujer.idVend);
+          let objIm = document.getElementById(objMujer.idObj);
+          let objBtn = document.getElementById(objMujer.btn);
+    
+          objMujer.ocultarObj();
         }
+     */
 
+
+
+
+    var productos = [];
+    productos[0] = { id: 1, nombre: "Blusa Mujer Manga Corta Nudo", imagen: "img/mujer1.webp", precio: 50.00, codigo: "P0001", stock: 5, categoria: "mujer" };
+    productos[1] = { id: 2, nombre: "Blusa Mujer Sin Manga Patty", imagen: "img/mujer2.webp", precio: 51.00, codigo: "P0002", stock: 5, categoria: "mujer" };
+    productos[2] = { id: 3, nombre: "Vestido Mujer Lazo", imagen: "img/mujer 3.webp", precio: 50.00, codigo: "P0003", stock: 5, categoria: "mujer" };
+    productos[3] = { id: 4, nombre: "Enterizo Largo Sin Mangas", imagen: "img/mujer4.webp", precio: 52.00, codigo: "P0004", stock: 5, categoria: "mujer" };
+    productos[4] = { id: 5, nombre: "Enterizo Jumper Mujer", imagen: "img/mujer5.webp", precio: 51.00, codigo: "P0005", stock: 5, categoria: "mujer" };
+    productos[5] = { id: 6, nombre: "Pantalón Mujer Lazo", imagen: "img/mujer6.webp", precio: 53.00, codigo: "P0006", stock: 5, categoria: "mujer" };
+    productos[6] = { id: 7, nombre: "Jean Mujer Sinpre Rasgado", imagen: "img/mujer7.webp", precio: 58.00, codigo: "P0007", stock: 5, categoria: "mujer" };
+    productos[7] = { id: 8, nombre: "Jean Mujer Black", imagen: "img/mujer8.webp", precio: 54.00, codigo: "P0008", stock: 5, categoria: "mujer" };
+    productos[8] = { id: 9, nombre: "Camisa Lorenzini", imagen: "img/cam.jpg", precio: 55.00, codigo: "P0009", stock: 5, categoria: "hombre" };
+    productos[9] = { id: 10, nombre: "Camis  a Nautica", imagen: "img/cam2.jpg", precio: 51.00, codigo: "P00010", stock: 5, categoria: "hombre" };
+    productos[10] = { id: 11, nombre: "Camisa Donatelli", imagen: "img/cam3.jpg", precio: 53.00, codigo: "P00011", stock: 5, categoria: "hombre" };
+
+    localStorage.setItem("lista_prod", JSON.stringify(productos))
+
+
+
+
+    catalogo = document.getElementById("catalogo");
+    console.log(catalogo);
+
+    function listarProductos() {
+
+      $("#catalogo").html("");
+      arrayProductos = JSON.parse(localStorage.getItem("lista_prod"));
+
+
+      if (arrayProductos === null) {
+        arrayProductos = [];
+      } else {
+        arrayProductos.forEach(elemento => {
+          if (elemento.categoria === "mujer") {
+            catalogo.innerHTML += `
+          <div id="product1" class="card col-sm-5 col-md-3 producto" data-id="${elemento.id}">
+          <img src="${elemento.imagen}" class="card-img-top" alt="..." />
+          <img id="vendido1" src="${elemento.imagen}" alt="" />
+          <div class="card-body">
+            <p class="card-text">${elemento.nombre}</p>
+            <h5 class="card-title"><b>S/.${elemento.precio}.00</b></h5>
+            <button class="btn btn-light" id="button1"
+              onclick="obtenerId('product1','vendido1','button1')">Comprar</button>
+          </div>
+        </div>`;
+          }
+
+        });
       }
-
-      const objMujer = new objVenta;
-      objMujer.idVend = idProd;
-      objMujer.idObj = idImg;
-      objMujer.btn = idBtn;
-
-      let objVen = document.getElementById(objMujer.idVend);
-      let objIm = document.getElementById(objMujer.idObj);
-      let objBtn = document.getElementById(objMujer.btn);
-
-      objMujer.ocultarObj();
     }
 
-    //producto flotante
+
 
     let mod = document.querySelector('.modal');
     let body = document.querySelectorAll('.modal-body');
@@ -311,28 +337,34 @@
     let precioCard = document.getElementById("precioCard");
     let tallaCard = document.getElementById("tallaCard");
 
+    document.addEventListener('DOMContentLoaded', () => {
+      listarProductos();
+      //producto flotante
+      document.querySelectorAll('.card').forEach(card => {
+        console.log(card);
+        card.onclick = () => {
+          console.log("click");
 
-    document.querySelectorAll('.card').forEach(card => {
-      card.onclick = () => {
+          $('.modal').modal('show');
+          body.forEach(preview => {
+            let imgSeleccionada = card.getElementsByTagName("img")[0].src;
+            let modeloSeleccionada = card.getElementsByTagName("p")[0].innerHTML;
+            let precioSeleccionada = card.getElementsByTagName("b")[0].innerHTML;
 
-        $('.modal').modal('show');
+            imgCard.src = imgSeleccionada;
+            modeloCard.innerHTML = modeloSeleccionada;
+            precioCard.innerHTML = precioSeleccionada;
+          });
 
-        body.forEach(preview => {
 
-          let imgSeleccionada = card.getElementsByTagName("img")[0].src;
-           let modeloSeleccionada = card.getElementsByTagName("p")[0].innerHTML;
-           let precioSeleccionada = card.getElementsByTagName("b")[0].innerHTML;
+        };
+      });
 
-           imgCard.src = imgSeleccionada;
-           modeloCard.innerHTML = modeloSeleccionada;
-           precioCard.innerHTML = precioSeleccionada;
-        });
-
-        
-      };
     });
 
-    
+
+
+
   </script>
 </body>
 
