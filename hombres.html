@@ -42,27 +42,27 @@
     </div>
     
       
-      <!--Boton flotante de los productos comprados-->
+      <!--Boton flotante de los productos comprados>
       <div onclick="carritoProductos('ventFlotant')" class="carrito">
         <i class="fa-solid fa-cart-shopping" id="logito" ></i>
       </div>
-      <!--Ventana flotante de los productos comprados-->
+      <Ventana flotante de los productos comprados>
       
       <div class="main row" id="ventFlotant">
         <div class="ventTitul">Productos</div>
         <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
-        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc2"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc3"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc4"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc5"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc6"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc7"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc8"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc9"></div>
         <div class="aceptar">
           <button id="botonAcep" class="btn btn-light" onclick="desaparecerVent()">Aceptar</button>
         </div>
-      </div>
+      </div-->
 
 
 
@@ -237,7 +237,8 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="bootstrap/js/jquery.js"></script>
 <script>
-
+  
+  let productosComprados;
   //Funcion para agregar estado de "Vendido"
   function obtenerId(idProd,idImg,idBtn){
     class objVenta{
@@ -264,10 +265,31 @@
     let objBtn = document.getElementById(objVaron.btn);    
 
     objVaron.ocultarObj();
+        
+    /*if (productosComprados == null) {
+      productosComprados = '{ "productos":[ {"codigo":"'+ idProd +'"} ] }' ;
+      console.log(productosComprados);
+    }else{
+      productosComprados = productosComprados+',' + '{"codigo":"'+ idProd +'"} ] }';
+      console.log(productosComprados);
+    }
+    
+    //Llamar a la id del Producto
+    const objProducCompra = JSON.parse(productosComprados);
 
-    //let productosComprados = '{"productos":[{"codigo":"C01"},' + '{"codigo":"C02"},' + '{"codigo":"C03"}]}';
+    let codProductos = objProducCompra.productos[0].codigo;
+    console.log(codProductos);
+
+    function pasala(idProductoInic, idProductFina){
+        let here = document.getElementById(idProductoInic).innerHTML;
+        console.log(here);
+
+        document.getElementById(idProductFina).innerHTML = here;
+    }
+    pasala(codProductos, 'objProduc1');*/
   }
-  console.log(idProd)
+
+    
 
   //producto flotante
     let preveiwContainer = document.querySelector('.productos-preview');
@@ -307,9 +329,7 @@
       }
     });
 
-    console.log(idProd)
-
-    function carritoProductos(objVentanaF){
+    /*function carritoProductos(objVentanaF){
       class objProducto{
         //Atributos
         objVentan;
@@ -329,7 +349,7 @@
     function desaparecerVent(){
       let ventana = document.getElementById("ventFlotant");
       ventana.style.opacity = 0;
-    }
+    }*/
 </script>
 
 </body>
