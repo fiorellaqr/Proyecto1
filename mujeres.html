@@ -418,7 +418,8 @@
       }else if (pcantidad =="") {
         alert ("Eliga una cantidad")
       }else{
-        if (arrayDato==null||arrayDato==[]) {
+        if (arrayDato==null) {
+          arrayDato=[];
           crearItem(id,ptalla,pcantidad);
           console.log(arrayDato);
         } else {
