@@ -41,6 +41,31 @@
         </div>
     </div>
     
+      
+      <!--Boton flotante de los productos comprados-->
+      <div onclick="carritoProductos('ventFlotant')" class="carrito">
+        <i class="fa-solid fa-cart-shopping" id="logito" ></i>
+      </div>
+      <!--Ventana flotante de los productos comprados-->
+      
+      <div class="main row" id="ventFlotant">
+        <div class="ventTitul">Productos</div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
+        <div class="col-xs-12 col-sm-2 col-md-2" id="objProduc1"></div>
+        <div class="aceptar">
+          <button id="botonAcep" class="btn btn-light" onclick="desaparecerVent()">Aceptar</button>
+        </div>
+      </div>
+
+
+
     <div style="padding-top: 6% ;">
         <div class="content row">
             <div class="filtro  col-sm-12 col-md-2">
@@ -225,10 +250,8 @@
       ocultarObj () {
         objVen.style.opacity = 0.6;
         objIm.style.opacity = 1;
-        objBtn.disabled = true;
-        
+        objBtn.disabled = true;        
       }
-
     }
     
     const objVaron = new objVenta;
@@ -238,14 +261,16 @@
 
     let objVen = document.getElementById(objVaron.idVend);
     let objIm = document.getElementById(objVaron.idObj);
-    let objBtn = document.getElementById(objVaron.btn);
-    
+    let objBtn = document.getElementById(objVaron.btn);    
 
     objVaron.ocultarObj();
+
+    //let productosComprados = '{"productos":[{"codigo":"C01"},' + '{"codigo":"C02"},' + '{"codigo":"C03"}]}';
   }
+  console.log(idProd)
 
   //producto flotante
-  let preveiwContainer = document.querySelector('.productos-preview');
+    let preveiwContainer = document.querySelector('.productos-preview');
     let previewBox = preveiwContainer.querySelectorAll('.preview');
 
     let imgCard = document.getElementById("imgCard");
@@ -282,6 +307,29 @@
       }
     });
 
+    console.log(idProd)
+
+    function carritoProductos(objVentanaF){
+      class objProducto{
+        //Atributos
+        objVentan;
+        
+        //Metodo para cambiar la propiedad de opacidad
+        ocultarObj () {
+          objProduc.style.opacity = 1;       
+        }
+      }
+      const objProduct = new objProducto;
+      objProduct.objVentan = objVentanaF;
+
+      let objProduc = document.getElementById(objProduct.objVentan);
+
+      objProduct.ocultarObj();
+    }
+    function desaparecerVent(){
+      let ventana = document.getElementById("ventFlotant");
+      ventana.style.opacity = 0;
+    }
 </script>
 
 </body>
