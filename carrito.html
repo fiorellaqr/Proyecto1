@@ -57,11 +57,11 @@
     </div>
 
     <div style="padding-top: 8%">
-        <div class="content row">
+        <div class="content row" id="cuerpo">
 
             <div class="col-8 col-md-7 col-sm-11">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
+                <ul id="listaCarrito" class="list-group list-group-flush">
+                    <!-- <li class="list-group-item">
                         <div class="carro-item ">
                             <div class="imgCarrito  col-4 col-md-3 col-sm-3"><img id="imgCarrito" src="img/mujer1.webp" alt=""></div>
                             <div class="detalles row  col-8  col-md-8 col-sm-9">
@@ -151,7 +151,7 @@
 
                             </div>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
 
@@ -160,30 +160,170 @@
                     <h5 class="card-header">Resumen de Pago</h5>
                     <div class="card-body row">
                         <div class="col col-6">
-                            <p class="card-text">Productos:</p>
+                            <p class="card-text">Productos (<span id="cprod"></span>):</p>
                         </div>
                         <div class="col col-6">
-                            <p>S/. 100.00</p>
+                            <p>S/. <span id="subtotal"></span></p>
+                        </div>
+                        <div class="col col-6">
+                            <p class="card-text">Envio:</p>
+                        </div>
+                        <div class="col col-6">
+                            <p>S/. <span id="envio">10.00</span></p>
                         </div>
                         <div class="col col-6">
                             <p class="card-text">Total:</p>
                         </div>
                         <div class="col col-6">
-                            <p>S/. 100.00</p>
+                            <p>S/. <span id="total"></span> </p>
                         </div>
-                        <a href="#" class="btn btn-primary col col-11 mx-auto">Procesar compra</a>
+                        
+                        <a href="checkout.html" class="btn btn-primary col col-11 mx-auto">Procesar compra</a>
                     </div>
                 </div>
             </div>
+            <!-- <div class="col-10 col-md10">
+                <div class="card vacio">
+                    <div class="card-body">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <h1 class="card-title">Tu Carro está vacío</h1>
+                        <p class="card-text">Tenemos miles de ofertas y oportunidades únicas, ¿te las vas a perder?</p>
+
+                        <a href="mujeres.html" class="btn btn-primary">Ver el catalogo</a>
+                    </div>
+                </div>
+            </div> -->
 
         </div>
     </div>
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
-  <script src="bootstrap/js/jquery.js"></script>
-  <script>
-    
-  </script>
+    <script src="bootstrap/js/jquery.js"></script>
+    <script>
+
+
+
+        lista = document.getElementById("lista");
+        function listarCarrito() {
+            $("#listaCarrito").html("");
+            arrayCarrito = JSON.parse(localStorage.getItem("miCarrito"));
+            arrayProductos = JSON.parse(localStorage.getItem("lista_prod"));
+
+            var total = 0;
+            var subtotal = 0;
+            console.log(arrayCarrito);
+            if (arrayCarrito == null || arrayCarrito.length==0) {
+                console.log("vacio");
+                 $("#cuerpo").html(`<div class="col-10 col-md10">
+                <div class="card vacio">
+                    <div class="card-body">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <h1 class="card-title">Tu Carro está vacío</h1>
+                        <p class="card-text">Tenemos miles de ofertas y oportunidades únicas, ¿te las vas a perder?</p>
+
+                        <a href="mujeres.html" class="btn btn-primary">Ver el catalogo</a>
+                    </div>
+                </div>
+            </div>`); 
+            } else {
+                arrayCarrito.forEach((item, index) => {
+
+                    producto = arrayProductos[item.id - 1];
+                    subtotal += producto.precio * item.cantidad;
+                    total = subtotal + 10;
+                    $("#listaCarrito").append(`<li class="list-group-item">
+                        <div class="carro-item ">
+                            <div class="imgCarrito  col-4 col-md-3 col-sm-3"><img id="imgCarrito" src="${producto.imagen}" alt=""></div>
+                            <div class="detalles row  col-8  col-md-8 col-sm-9">
+                                <h5 id="modeloCard">${producto.nombre}</h5>
+                                <div class="info row col col-12">
+                                    <p class="col col-12" style="color: grey;">Codigo: ${producto.codigo}</p>
+
+                                    <div class="col col-4 col-sm-3">
+                                        <p >Talla: <span>${item.talla}</span></p>
+                                    </div>
+                                    <div class="row col col-5 col-sm-6">
+                                        <label class="col col-5" for="inputCant">Cantidad</label>
+                                        <div class="col input input-group-sm">
+                                        <input type="number" id="cantidad" class="form-control col col-3" onChange="actualizarCantidad(this,${producto.id}) ;calcularTotal()" value="${item.cantidad}" min="1">
+                                    </div>
+                                    </div>
+                                    
+                                    <div class="col col-10">
+                                        <span id="precioCard" class="precio">S/${producto.precio.toFixed(2)}</span>
+                                    </div>
+                                    <div class="col col-2" data-item="${index}"  onclick="eliminarProducto(this,${item.id})"  >
+                                        <i class="fa-solid fa-trash"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                `)
+                });
+                $("#subtotal").text(subtotal.toFixed(2));
+                $("#total").text(total.toFixed(2));
+                $("#cprod").text(arrayCarrito.length);
+
+            }
+        }
+
+        function calcularTotal() {
+
+            var total = 0;
+            var subtotal = 0;
+
+            arrayProductos = JSON.parse(localStorage.getItem("lista_prod"));
+            arrayCarrito = JSON.parse(localStorage.getItem("miCarrito"));
+
+            arrayCarrito.forEach((item, index) => {
+                var cant = item.cantidad;
+                producto = arrayProductos[item.id - 1];
+                subtotal += producto.precio * cant;
+                total = subtotal + 10;
+
+            })
+
+            $("#subtotal").text(subtotal.toFixed(2));
+            $("#total").text(total);
+
+
+        };
+
+        function actualizarCantidad(obj, idProd) {
+
+            for (let i = 0; i < arrayCarrito.length; i++) {
+                if (arrayCarrito[i].id == idProd) {
+                    arrayCarrito[i].cantidad = obj.value;
+                    break;
+                }
+
+            }
+
+            localStorage.setItem("miCarrito", JSON.stringify(arrayCarrito));
+        }
+
+        function eliminarProducto(obj, id) {
+            let carrito_aux = [];
+
+
+            arrayCarrito.forEach((elem, index) => {
+                if (elem.id != id) {
+                    carrito_aux.push(elem);
+                }
+            });
+
+
+
+
+
+            localStorage.setItem("miCarrito", JSON.stringify(carrito_aux));
+            listarCarrito();
+        }
+
+        listarCarrito();
+    </script>
 </body>
 
 </html>
