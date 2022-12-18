@@ -197,11 +197,31 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
-              <button type="submit" id="btnSubmit" class="btn btn-primary">Añadir al carrito</button>
+              <button type="submit" id="btnSubmit" data-bs-target="#exampleModalToggle2" class="btn btn-primary">Añadir al carrito</button>
             </div>
           </div>
         </div>
       </div>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <!-- <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Hide this modal and show the first with the button below.
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</button>
+            </div>
+          </div>
+        </div>
+      </div> -->
 
     </div>
   </div>
@@ -349,7 +369,7 @@
             let imgSeleccionada = card.getElementsByTagName("img")[0].src;
             let modeloSeleccionada = card.getElementsByTagName("p")[0].innerHTML;
             let precioSeleccionada = card.getElementsByTagName("b")[0].innerHTML;
-            let idSeleccionada = card.getAttribute("data-id");
+            let idSeleccionada = (card).getAttribute("data-id");
 
             imgCard.src = imgSeleccionada;
             modeloCard.innerHTML = modeloSeleccionada;
@@ -360,6 +380,7 @@
       });
     }
 
+    ////BOTON AGREGAR CARRITO
 
     $("#btnSubmit").click(function(event){
 
@@ -367,12 +388,11 @@
       console.log("click botn");
     
       var carritoItem = arrayProductos[id-1];
-      console.log();
-
       addCarrito(carritoItem.id);
     })
     
     let arrayDato=[];
+
     function crearItem (id,talla,cant){
       let dato={
         id: id,
@@ -380,21 +400,41 @@
         cantidad: cant
       }
       arrayDato.push(dato);
+      return dato;
     }
+
+  
+      
+
 
     function addCarrito(id){
       
-      let miCarrito = localStorage.getItem("miCarrito");
+      let arrayDato = JSON.parse(localStorage.getItem("miCarrito"));
       var ptalla = $("#tallaCard option:selected").text();
       var pcantidad = $("#cantCard").val();
       
-      //console.log(id,ptalla,pcantidad);
-      crearItem(id,ptalla,pcantidad);   
+      if (ptalla=="Seleccionar talla" ) {
+        alert("Debe seleccionar una talla");
+      }else if (pcantidad =="") {
+        alert ("Eliga una cantidad")
+      }else{
+        if (arrayDato==null||arrayDato==[]) {
+          crearItem(id,ptalla,pcantidad);
+          console.log(arrayDato);
+        } else {
+
+          arrayDato[arrayDato.length]={
+            id: id,
+            talla: ptalla,
+            cantidad: pcantidad
+          } ;
+          alert("Se ha añadido al carrito");
+          console.log(arrayDato);
+
+        }
+      }
       localStorage.setItem("miCarrito", JSON.stringify(arrayDato));
     }
-
-    
-
 
     document.addEventListener('DOMContentLoaded', () => {
       listarProductos();
