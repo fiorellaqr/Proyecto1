@@ -382,6 +382,73 @@ iframe {
   color: #fff;
 }
 
+/*Modal bootstrap*/
+.modal-header{
+  border-bottom: none;
+}
+.modal-footer{
+  border-top: none;
+}
+.modal-body{
+  display: flex;
+  justify-content: space-evenly
+}
+.modal-body .detalles{
+  width: 42%;
+}
+
+.modal-body .imgCard{
+  width: 50%;
+}
+
+
+.modal-body #imgCard{
+  height: 20rem;
+}
+
+.modal-body h3{
+  color: #444;
+  padding: .5rem 0;
+  font-size: 1.8rem;
+}
+
+.modal-body .stars{
+  font-size: 1rem;
+}
+
+.modal-body .stars i{
+  color: rgba(57, 53, 53, 0.493);
+}
+
+.modal-body .stars span{
+  color: rgba(57, 53, 53, 0.493);
+}
+
+.modal-body p{
+  padding: 1rem 0;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 0;
+}
+
+.form-select {
+  width: 55%;
+  margin-bottom: 1rem;
+}
+
+.modal-body .botons{
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.modal-body .botons a{
+  flex: 1 1 16rem;
+  padding: 0.5rem;
+  color: black;
+  border: .1rem solid black;
+}
 
 /*Boton para comprar*/
 #vendido1{

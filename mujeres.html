@@ -197,15 +197,12 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
-              <button type="submit" id="btnSubmit" data-bs-target="#exampleModalToggle2" class="btn btn-primary">Añadir al carrito</button>
+              <button type="submit" id="btnSubmit" data-bs-target="#exampleModalToggle2" class="btn btn-primary"> Añadir al carrito</button>
             </div>
           </div>
         </div>
       </div>
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
+      
       <!-- <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
@@ -315,8 +312,14 @@
     productos[6] = { id: 7, nombre: "Jean Mujer Sinpre Rasgado", imagen: "img/mujer7.webp", precio: 58.00, codigo: "P0007", stock: 5, categoria: "mujer" };
     productos[7] = { id: 8, nombre: "Jean Mujer Black", imagen: "img/mujer8.webp", precio: 54.00, codigo: "P0008", stock: 5, categoria: "mujer" };
     productos[8] = { id: 9, nombre: "Camisa Lorenzini", imagen: "img/cam.jpg", precio: 55.00, codigo: "P0009", stock: 5, categoria: "hombre" };
-    productos[9] = { id: 10, nombre: "Camis  a Nautica", imagen: "img/cam2.jpg", precio: 51.00, codigo: "P00010", stock: 5, categoria: "hombre" };
+    productos[9] = { id: 10, nombre: "Camisa Nautica", imagen: "img/cam2.jpg", precio: 51.00, codigo: "P00010", stock: 5, categoria: "hombre" };
     productos[10] = { id: 11, nombre: "Camisa Donatelli", imagen: "img/cam3.jpg", precio: 53.00, codigo: "P00011", stock: 5, categoria: "hombre" };
+    productos[11] = { id: 12, nombre: "Chompa Hypnotic", imagen: "img/chomp.jpg", precio: 52.00, codigo: "P00012", stock: 5, categoria: "hombre" };
+    productos[12] = { id: 13, nombre: "Chompa Malabar", imagen: "img/chomp2.jpg", precio: 53.00, codigo: "P00013", stock: 5, categoria: "hombre" };
+    productos[13] = { id: 14, nombre: "Chompa Index", imagen: "img/chomp3.jpg", precio: 55.00, codigo: "P00014", stock: 5, categoria: "hombre" };
+    productos[14] = { id: 15, nombre: "Pantalon Drill", imagen: "img/panta.jpg", precio: 56.00, codigo: "P00015", stock: 5, categoria: "hombre" };
+    productos[15] = { id: 16, nombre: "Pantalon DKVK", imagen: "img/panta2.jpg", precio: 59.00, codigo: "P00016", stock: 5, categoria: "hombre" };
+
 
     localStorage.setItem("lista_prod", JSON.stringify(productos))
 
@@ -363,6 +366,7 @@
       document.querySelectorAll('.card').forEach(card => {
         card.onclick = () => {
           console.log("click");
+          console.log(document.getElementsByClassName("modal"));
 
           $('.modal').modal('show');
           body.forEach(preview => {
